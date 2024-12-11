@@ -1,0 +1,17 @@
+service: "service:Embeddings"
+labels:
+  owner: data-competence-center
+  project: gallery
+include:
+- "*.py"
+python:
+  packages:
+   - ninja
+   - torch
+   - einops
+   - flash_attn
+   - sentence-transformers
+   - bentoml
+   - pytest
+docker:
+  python_version: "3.11"
