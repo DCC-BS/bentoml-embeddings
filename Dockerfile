@@ -6,6 +6,6 @@ ADD . /app
 WORKDIR /app
 
 RUN uv sync
-RUN uv sync --build
-RUN uv sync --compile
+RUN uv pip install flash-attn==2.7.2.post1
+
 ENTRYPOINT uv run bentoml serve service:Embeddings -p 50001

@@ -5,15 +5,18 @@ requires-python = "==3.12.7"
 dependencies = [
     "bentoml>=1.3.15",
     "einops>=0.8.0",
+    "ninja>=1.11.1.3",
+    "packaging>=24.2",
     "pytest>=8.3.4",
     "rerankers[transformers]>=0.6.1",
     "sentence-transformers>=3.3.1",
     "sentencepiece>=0.2.0",
+    "setuptools>=75.6.0",
+    "torch>=2.5.1",
 ]
 
 [project.optional-dependencies]
-build = ["torch", "setuptools", "packaging"]
-compile = ["flash-attn"]
+compile = ["flash-attn==2.6.3"]
 
 [tool.uv]
 no-build-isolation-package = ["flash-attn"]
@@ -21,4 +24,23 @@ no-build-isolation-package = ["flash-attn"]
 [[tool.uv.dependency-metadata]]
 name = "flash-attn"
 version = "2.6.3"
-requires-dist = ["torch", "einops"]
+requires-dist = ["torch", "einops", "setuptools"]
+
+
+
+[tool.uv.sources]
+torch = [
+  { index = "pytorch-cu124", marker = "platform_system != 'Darwin'"},
+]
+torchvision = [
+    { index = "pytorch-cpu", marker = "platform_system == 'Darwin'" },
+]
+
+[[tool.uv.index]]
+name = "pytorch-cu124"
+url = "https://download.pytorch.org/whl/cu124"
+explicit = true
+[[tool.uv.index]]
+name = "pytorch-cpu"
+url = "https://download.pytorch.org/whl/cpu"
+explicit = true
