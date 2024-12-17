@@ -14,13 +14,6 @@ services:
       - HTTPS_PROXY
       - no_proxy
       - NO_PROXY
-      - HF_AUTH_TOKEN
-      - ROOT
-      - DEVICE
-      - BATCH_SIZE
-      - ADDITIONAL_SPEAKERS
-      - API_URL
-      - MAX_QUEUE_SIZE
     volumes:
       - hugging_face_cache:/root/.cache/huggingface
     deploy:
