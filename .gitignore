@@ -1,0 +1,12 @@
+*
+
+!/.github
+
+!/.github/CODEOWNERS
+
+!/.editorconfig
+!/.gitattributes
+!/.gitignore
+
+!/LICENSE
+!/README.md
