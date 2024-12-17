@@ -25,7 +25,6 @@ ValidStringList = Annotated[t.List[ValidString], MinLen(1), MaxLen(MAX_DOCS)]
 
 @bentoml.service(
     traffic={"timeout": 60},
-    resources={"gpu": 1},
 )
 class Embeddings:
     """

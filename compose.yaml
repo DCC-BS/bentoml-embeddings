@@ -1,10 +1,10 @@
 services:
-  embeddings-api:
+  embeddings:
     restart: unless-stopped
     build:
       context: .
       dockerfile: Dockerfile
-    container_name: embeddings-api
+    container_name: embeddings
     ports:
       - '50001:50001'
     environment:
