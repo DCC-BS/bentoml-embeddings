@@ -1,6 +1,8 @@
 services:
   embeddings:
-    image: quay.io/ktbs/fd-itbs-dms/embeddings:latest
+    tags:
+      - quay.io/ktbs/fd-itbs-dms/embeddings:latest
+      - quay.io/ktbs/fd-itbs-dms/embeddings:1.0.0
     restart: unless-stopped
     build:
       context: .
