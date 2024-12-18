@@ -1,4 +1,4 @@
-# Repository template (initial)
+# Embeddings
 
 ## License
 
