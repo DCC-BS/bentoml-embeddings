@@ -1,5 +1,5 @@
 from __future__ import annotations
-
+import os
 import typing as t
 
 import numpy as np
@@ -9,11 +9,11 @@ from annotated_types import MinLen, MaxLen
 from typing import Annotated
 
 
-EMBEDDING_MODEL_ID = "jinaai/jina-embeddings-v3"
-MAX_SEQ_LENGTH = 8192
-MAX_DOCS = 32
-RANKER_TYPE = "cross-encoder"
-LANGUAGE = "multi"
+EMBEDDING_MODEL_ID = os.getenv("EMBEDDING_MODEL_ID", "jinaai/jina-embeddings-v3")
+MAX_SEQ_LENGTH = int(os.getenv("MAX_SEQ_LENGTH", 8192))
+MAX_DOCS = int(os.getenv("MAX_DOCS", 32))
+RANKER_TYPE = os.getenv("TIMEOUT", "cross-encoder")
+LANGUAGE = os.getenv("LANGUAGE", "multi")
 # The combination of RANKER_TYPE and LANGUAGE determines the specific ranker model.
 # See https://github.com/AnswerDotAI/rerankers/blob/main/rerankers/reranker.py
 

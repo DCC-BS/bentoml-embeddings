@@ -20,6 +20,11 @@ services:
       - HTTPS_PROXY
       - no_proxy
       - NO_PROXY
+      - EMBEDDING_MODEL_ID
+      - MAX_SEQ_LENGTH
+      - MAX_DOCS
+      - RANKER_TYPE
+      - LANGUAGE
     volumes:
       - hugging_face_cache:/root/.cache/huggingface
     deploy:

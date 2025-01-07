@@ -45,3 +45,15 @@ explicit = true
 name = "pytorch-cpu"
 url = "https://download.pytorch.org/whl/cpu"
 explicit = true
+
+
+
+[tool.bentoml.build]
+service = "service:Embeddings"
+description = "Embeddings API"
+include = ["*.py"]
+exclude = ["tests/"]
+
+[tool.bentoml.build.labels]
+owner = "data competence center"
+stage = "production"
