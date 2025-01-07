@@ -77,21 +77,21 @@ class Embeddings:
         return self.encoder_model.encode(documents, task=task, prompt_name=task)
     
     @bentoml.api()
-    def encode_query(
+    def encode_queries(
         self,
-        query: ValidString = Field(description="Query string to be encoded as query vector"),
+        queries: ValidStringList
     ) -> np.ndarray:
         """
-        Encodes a single query string into a query embedding.
+        Encodes a list of query strings into query embeddings.
 
         Args:
-            query (str): The query string to be encoded.
+            query (List[str]): A list of query strings to be encoded.
 
         Returns:
-            np.ndarray: An array containing the query embedding for the input query.
+            np.ndarray: An array containing the query embeddings for the input queries.
         """
         task = "retrieval.query"
-        return self.encoder_model.encode([query], task=task, prompt_name=task)
+        return self.encoder_model.encode(queries, task=task, prompt_name=task)
     
 
     @bentoml.api()
