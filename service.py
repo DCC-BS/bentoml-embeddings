@@ -7,6 +7,7 @@ import bentoml
 from pydantic import Field
 from annotated_types import MinLen, MaxLen
 from typing import Annotated
+from torch import Tensor
 
 
 EMBEDDING_MODEL_ID = os.getenv("EMBEDDING_MODEL_ID", "jinaai/jina-embeddings-v3")
@@ -19,7 +20,7 @@ LANGUAGE = os.getenv("LANGUAGE", "multi")
 
 EXAMPLE_INPUT = ["Ich esse gerne Pizza."]
 
-ValidString = Annotated[str, MinLen(1), MaxLen(MAX_SEQ_LENGTH)]
+ValidString = Annotated[str, MinLen(1)]
 ValidStringList = Annotated[t.List[ValidString], MinLen(1), MaxLen(MAX_DOCS)]
 
 
@@ -117,3 +118,11 @@ class Embeddings:
         else:
             result_json = {result.doc_id: (result.text, result.score, result.rank) for result in ranked_results}
         return result_json
+
+    @bentoml.api
+    def tokenize(
+        self,
+        documents: ValidStringList = Field(description="Documents that should be tokenized")
+    ) -> t.List[t.List[int]]:
+        tokens: Tensor = self.encoder_model.tokenize(texts=documents)["input_ids"]
+        return tokens.tolist()
