@@ -2,3 +2,8 @@
 .git
 .pytest_cache
 __pycache__
+.vscode
+tests
+.editorconfig
+Dockerfile
+.coverage*

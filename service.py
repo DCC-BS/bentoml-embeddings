@@ -13,7 +13,7 @@ from torch import Tensor
 EMBEDDING_MODEL_ID = os.getenv("EMBEDDING_MODEL_ID", "jinaai/jina-embeddings-v3")
 MAX_SEQ_LENGTH = int(os.getenv("MAX_SEQ_LENGTH", 8192))
 MAX_DOCS = int(os.getenv("MAX_DOCS", 32))
-RANKER_TYPE = os.getenv("TIMEOUT", "cross-encoder")
+RANKER_TYPE = os.getenv("RANKER_TYPE", "cross-encoder")
 LANGUAGE = os.getenv("LANGUAGE", "multi")
 # The combination of RANKER_TYPE and LANGUAGE determines the specific ranker model.
 # See https://github.com/AnswerDotAI/rerankers/blob/main/rerankers/reranker.py

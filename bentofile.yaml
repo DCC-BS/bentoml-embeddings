@@ -1,6 +1,0 @@
-service: "service:Embeddings"
-labels:
-  owner: data-competence-center
-  project: gallery
-include:
-- "*.py"
