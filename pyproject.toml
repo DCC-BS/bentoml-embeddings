@@ -17,7 +17,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-compile = ["flash-attn==2.6.3"]
+compile = ["flash-attn==2.7.4.post1"]
 
 [tool.uv]
 no-build-isolation-package = ["flash-attn"]
