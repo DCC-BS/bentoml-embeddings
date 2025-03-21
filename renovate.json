@@ -49,7 +49,6 @@
     "labels": ["renovate"],
     "timezone": "Europe/Zurich",
     "platformAutomerge": true,
-    "allowPostMerge": true,
     "dependencyDashboard": true,
     "prCreation": "immediate",
     "requiredStatusChecks": [
