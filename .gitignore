@@ -172,3 +172,5 @@ cython_debug/
 
 !/LICENSE
 !/README.md
+!/pytest.ini
+!/renovate.json
