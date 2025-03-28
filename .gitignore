@@ -172,6 +172,8 @@ cython_debug/
 
 !/LICENSE
 !/README.md
+!/pytest.ini
+!/renovate.json
 
 !/.github/workflows/
 !/.github/workflows/*.yml
