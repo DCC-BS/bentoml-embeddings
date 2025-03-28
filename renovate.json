@@ -94,5 +94,6 @@
   "timezone": "Europe/Zurich",
   "platformAutomerge": true,
   "dependencyDashboard": true,
+  "ignoreTests": true,
   "prCreation": "immediate"
 }
