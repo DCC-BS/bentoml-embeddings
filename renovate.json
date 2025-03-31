@@ -15,50 +15,8 @@
     },
     {
       "matchDepTypes": [
-        "dependencies",
-        "optionalDependencies",
-        "peerDependencies",
-        "devDependencies"
-      ],
-      "matchFileNames": [
-        "pyproject.toml"
-      ],
-      "groupName": "python-dependencies",
-      "labels": [
-        "dependencies",
-        "python"
-      ],
-      "automerge": false
-    },
-    {
-      "matchDepTypes": [
-        "devDependencies"
-      ],
-      "matchPackageNames": [
-        "ruff",
-        "mkdocs",
-        "mkdocs-material"
-      ],
-      "groupName": "python-dev-tools",
-      "labels": [
-        "dev-dependencies",
-        "python"
-      ],
-      "automerge": true
-    },
-    {
-      "matchDepTypes": [
-        "dependencies",
         "optionalDependencies",
         "devDependencies"
-      ],
-      "matchPackageNames": [
-        "uv"
-      ],
-      "groupName": "python-dev-tools",
-      "labels": [
-        "dev-dependencies",
-        "python"
       ],
       "automerge": true
     },
@@ -71,25 +29,7 @@
         "devcontainer"
       ],
       "automerge": true,
-      "minimumReleaseAge": "7 days"
-    },
-    {
-      "matchPackageNames": [
-        "python"
-      ],
-      "matchFileNames": [
-        "Dockerfile"
-      ],
-      "groupName": "docker-python-version",
-      "labels": [
-        "docker",
-        "python"
-      ],
-      "automerge": true
     }
-  ],
-  "labels": [
-    "renovate"
   ],
   "timezone": "Europe/Zurich",
   "platformAutomerge": true,
